@@ -10,7 +10,7 @@ const profileSchema = new mongo.Schema(
     userName: {
       type: String,
       required: true,
-      unique:true
+      unique: true,
     },
     sex: {
       type: String,
@@ -18,19 +18,45 @@ const profileSchema = new mongo.Schema(
 
     phoneNumber: {
       type: String,
-      unique:true
+    
     },
     email: {
       type: String,
       required: true,
-      unique:true
+      unique: true,
     },
-    image: {
-      type: String,
-    },
-    coverImage: {
-      type: String,
-    },
+    image:
+      {
+        imageURL: {
+          type: String,
+        },
+        originalName: {
+          type: String,
+        },
+        mimeType: {
+          type: String,
+        },
+        size: {
+          type: Number,
+        },
+      },
+    
+    coverImage: 
+      {
+        imageURL: {
+          type: String,
+        },
+        originalName: {
+          type: String,
+        },
+        mimeType: {
+          type: String,
+        },
+        size: {
+          type: Number,
+        },
+      },
+    
 
     password: {
       type: String,
@@ -53,26 +79,25 @@ const profileSchema = new mongo.Schema(
     maritialStatus: {
       type: String,
     },
+ 
+
     follower: [
       {
-        name: String,
-        userName: String,
-        userImage: String,
+        user:{type:mongo.Schema.Types.ObjectId,ref:"Profile"}
       },
     ],
     following: [
       {
-        name: String,
-        userName: String,
-        userImage: String,
+        user:{type:mongo.Schema.Types.ObjectId,ref:"Profile"}
       },
     ],
 
-   
+    bookmarked: [
+      {
+        post: { type: mongo.Schema.Types.ObjectId, ref: "posts" },
+      },
+    ],
 
-    logIn: {
-      type: Boolean,
-    },
   },
   { timestamps: true }
 );
