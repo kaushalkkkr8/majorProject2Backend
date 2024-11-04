@@ -5,11 +5,11 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
-const corsOption = {
-  origin: "*",
-  credential: true,
-  optionSuccessStatus: 200,
-};
+// const corsOption = {
+//   origin: "*",
+//   credential: true,
+//   optionSuccessStatus: 200,
+// };
 
 const Posts = require("./Authentication/Model/postsModel");
 const Profile = require("./Authentication/Model/profileModel");
@@ -20,7 +20,8 @@ const postRoute= require("./Authentication/Routes/postRoutes")
 
 
 
-app.use(cors(corsOption));
+// app.use(cors(corsOption));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
