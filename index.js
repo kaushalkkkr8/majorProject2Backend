@@ -11,13 +11,22 @@ const authProfile = require("./Authentication/Routes/profileRouter");
 const imageRoute= require("./Authentication/Routes/imageRoutes")
 const postRoute= require("./Authentication/Routes/postRoutes")
 
-const corsOption = {
-  // origin: "*",
-  origin: "http://localhost:3000",
-  // Credential: true,
+// const corsOption = {
+//   // origin: "*",
+//   origin: "http://localhost:3000",
+//   // Credential: true,
+//   credentials: true,
+//   // optionSuccessStatus: 200,
+//   optionsSuccessStatus: 200,
+// };
+const corsOptions = {
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders:
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+
   credentials: true,
-  // optionSuccessStatus: 200,
-  optionsSuccessStatus: 200,
+  optionSuccessStatus: 200,
 };
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
