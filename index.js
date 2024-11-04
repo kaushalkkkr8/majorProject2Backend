@@ -5,6 +5,12 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 
+const corsOption = {
+  origin: "*",
+  credential: true,
+  optionSuccessStatus: 200,
+};
+
 const Posts = require("./Authentication/Model/postsModel");
 const Profile = require("./Authentication/Model/profileModel");
 const authRouter = require("./Authentication/Routes/authRouter");
@@ -12,26 +18,11 @@ const authProfile = require("./Authentication/Routes/profileRouter");
 const imageRoute= require("./Authentication/Routes/imageRoutes")
 const postRoute= require("./Authentication/Routes/postRoutes")
 
-const corsOption = {
-  // origin: "*",
-  origin: "http://localhost:3000",
-  // credential: true,
-  credentials: true,
-  // optionSuccessStatus: 200,
-  optionsSuccessStatus: 200,
-};
-// const corsOptions = {
-//   origin: "*",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   allowedHeaders:
-//     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
 
- 
-//   optionSuccessStatus: 200,
-// };
+
+app.use(cors(corsOption));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors(corsOption));
 app.use(express.json());
 dataConnection();
 
