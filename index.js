@@ -25,10 +25,12 @@ app.use(cors(corsOption));
 app.use(express.json());
 dataConnection();
 
+// const PORT = 3000;
+const PORT = 4000;
+
 app.get("/", (req, res) => {
   res.send("Hello, Express!");
 });
-const PORT = 3000;
 
 // authenticated signup Login****************************************
 
