@@ -12,7 +12,8 @@ const imageRoute= require("./Authentication/Routes/imageRoutes")
 const postRoute= require("./Authentication/Routes/postRoutes")
 
 const corsOption = {
-  origin: "*",
+  // origin: "*",
+  origin: "http://localhost:3000",
   Credential: true,
   optionSuccessStatus: 200,
 };
