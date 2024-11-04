@@ -25,7 +25,7 @@ const corsOptions = {
   allowedHeaders:
     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
 
-  credentials: true,
+ 
   optionSuccessStatus: 200,
 };
 app.use(bodyParser.json());
