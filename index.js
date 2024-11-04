@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 const Posts = require("./Authentication/Model/postsModel");
 const Profile = require("./Authentication/Model/profileModel");
