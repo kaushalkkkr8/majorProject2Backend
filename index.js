@@ -11,6 +11,13 @@ require("dotenv").config();
 //   optionSuccessStatus: 200,
 // };
 
+app.use(cors({
+  origin: "*",
+  credentials: true,
+  optionsSuccessStatus: 200,
+}));
+
+
 const Posts = require("./Authentication/Model/postsModel");
 const Profile = require("./Authentication/Model/profileModel");
 const authRouter = require("./Authentication/Routes/authRouter");
@@ -21,7 +28,7 @@ const postRoute= require("./Authentication/Routes/postRoutes")
 
 
 // app.use(cors(corsOption));
-app.use(cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
