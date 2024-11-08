@@ -11,11 +11,7 @@ require("dotenv").config();
 //   optionSuccessStatus: 200,
 // };
 
-app.use(cors({
-  origin: "*",
-  credentials: true,
-  optionsSuccessStatus: 200,
-}));
+
 
 
 const Posts = require("./Authentication/Model/postsModel");
