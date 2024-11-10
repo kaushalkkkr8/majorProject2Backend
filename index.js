@@ -24,7 +24,7 @@ const postRoute= require("./Authentication/Routes/postRoutes")
 
 
 // app.use(cors(corsOption));
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
